@@ -15,6 +15,9 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+ 
+        @stack('style') <!--warna page pada page edit sahaja adn mesti atas head-->
 </head>
 <body>
     <div id="app">
@@ -30,8 +33,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
-                    </ul>
+  
+        <li class="nav-item">   
+                <a href="{{ route('home') }}" class="nav-link"">Home</a>
+        </li>
+    
+        <li class="nav-item">   
+                <a href="{{ route('complaint.index') }}" class="nav-link"">Complaint List</a>
+        </li>             
+    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -76,5 +86,6 @@
             @yield('content')
         </main>
     </div>
+    @stack('script') <!--mesti sebelum body -->
 </body>
 </html>
